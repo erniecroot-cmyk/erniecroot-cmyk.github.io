@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Blog and opinions by Ernie Croot.">
+  <title>Blog &amp; Opinions | Ernie Croot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --ink: #182b3b; --muted: #566571; --line: #e2e7e9; --accent: #a14c2e; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; color: var(--ink); font-family: 'Roboto', Arial, sans-serif; font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+    .wrap { width: min(1060px, calc(100% - 80px)); margin-inline: auto; }
+    .disclaimer { margin: 0; padding: 24px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .masthead { min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
+    .wordmark { font-size: 16px; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+    .masthead nav { font-size: 14px; }
+    .masthead nav a { text-decoration: none; }
+    .page-intro { padding: 68px 0 42px; }
+    h1 { margin: 0; font-size: clamp(42px, 6vw, 64px); font-weight: 500; line-height: 1.1; letter-spacing: -.055em; }
+    .posts { max-width: 800px; min-height: 280px; padding-bottom: 70px; }
+    .post { padding: 30px 0 36px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+    .post-date { display: block; margin-bottom: 12px; color: var(--accent); font-size: 13px; font-weight: 500; }
+    .post h2 { margin: 0 0 16px; font-size: 30px; font-weight: 500; line-height: 1.3; letter-spacing: -.025em; }
+    .post-body p { margin: 0; line-height: 1.8; }
+    footer { padding: 26px 0 36px; border-top: 1px solid var(--line); }
+    footer p { margin: 0; color: var(--muted); font-size: 12px; }
+    @media (max-width: 760px) {
+      .wrap { width: calc(100% - 40px); }
+      .masthead { min-height: 82px; }
+      .page-intro { padding: 48px 0 32px; }
+      .posts { padding-bottom: 46px; }
+    }
+    @media (max-width: 480px) {
+      .disclaimer { font-size: 13px; padding-block: 20px; }
+      .page-intro { padding: 38px 0 28px; }
+      .post h2 { font-size: 27px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="disclaimer">This is not a publication of Georgia Institute of Technology and the Georgia Institute of Technology has not edited or examined the content. The author of the page is solely responsible for its content.</p>
+    <header class="masthead">
+      <a class="wordmark" href="index.html" aria-label="Ernie Croot, home">Ernie Croot</a>
+      <nav aria-label="Main navigation"><a href="index.html">Home</a></nav>
+    </header>
+    <main>
+      <div class="page-intro"><h1>Blog &amp; opinions</h1></div>
+      <div class="posts">
+        <!-- Add future posts above this article, using the same article structure. -->
+        <article class="post" aria-labelledby="post-2026-10-22">
+          <header>
+            <time class="post-date" datetime="2026-10-22">Thursday, October 22, 2026</time>
+            <h2 id="post-2026-10-22">test</h2>
+          </header>
+          <div class="post-body"><p>this is a test</p></div>
+        </article>
+      </div>
+    </main>
+    <footer><p>Ernie Croot</p></footer>
+  </div>
+</body>
+</html>
