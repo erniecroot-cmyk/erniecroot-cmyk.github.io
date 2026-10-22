@@ -67,20 +67,64 @@ Subject: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 Dear XXXX XXXX,
 
-Mainly I just think about whether I have enough money to get past the next 10 years (I have thought about retiring early, say in the next 5 years).  After that, I expect things will get a lot cheaper, due to automation, and that people could live off their retirement fairly comfortably, even if they retire early.
+Mainly I just think about whether I have enough money to get past the next 10 years (I have thought about 
+retiring early, say in the next 5 years).  After that, I expect things will get a lot cheaper, due to 
+automation, and that people could live off their retirement fairly comfortably, even if they retire early.
 
-The only concern I think one should have about all these tech developments near term (next 2 to 5 years) is how the administration reacts and how students react.  The last time the MOOC stuff hit, they got very worried, but didn't really do a whole lot (except to convene some school-wide committees to look into it and make recommendations).  This time, they'll probably worry that MIT or Stanford or some other big-name school will offer online courses enhanced with bots -- students watch lecture videos, then the bots released by MIT (in partnership with Microsoft, say) answer all their questions (serving as TA), grade their homeworks, and even their exams and projects.  The worry would be that many more students might take courses this way through those big schools, and get the MIT imprimatur on their transcript; those students won't be doing the same with Georgia Tech.  That was the worry with MOOCs before.
+The only concern I think one should have about all these tech developments near term (next 2 to 5 years) 
+is how the administration reacts and how students react.  The last time the MOOC stuff hit, they got very 
+worried, but didn't really do a whole lot (except to convene some school-wide committees to look into it 
+and make recommendations).  This time, they'll probably worry that MIT or Stanford or some other big-name 
+school will offer online courses enhanced with bots -- students watch lecture videos, then the bots released 
+by MIT (in partnership with Microsoft, say) answer all their questions (serving as TA), grade their homeworks, 
+and even their exams and projects.  The worry would be that many more students might take courses this way 
+through those big schools, and get the MIT imprimatur on their transcript; those students won't be doing the 
+same with Georgia Tech.  That was the worry with MOOCs before.
 
-There'll probably be more demands on professors to make their in-person classes livelier and more engaging, and teaching will become much more important than it is now.   The people who are good teachers, that the students like, will be the big winners.  People who are only decent (but not top) at research, but are sub-par teachers (perhaps due to language barriers), might have some serious problems.
+There'll probably be more demands on professors to make their in-person classes livelier and more engaging, 
+and teaching will become much more important than it is now.   The people who are good teachers, that the 
+students like, will be the big winners.  People who are only decent (but not top) at research, but are sub-par 
+teachers (perhaps due to language barriers), might have some serious problems.
 
-Further out, over the next 7 to 15 years, the field of math will transition to something more like the field of "history" (which is more about scholarly work and interpretation).  Being a hot-shot researcher who can come up with deep theories and deep proofs worthy of Annals will no longer have much value, as machines will be able to write thousands and thousands of Annals-worthy proofs every day, and even generate new objects to study, well-chosen definitions, etc.  Most major research prizes like the Fields Medal and the Cole Prize will probably be disbanded, since it won't be possible to tell whether a human or machine did the critical work; and these prizes are currently about awarding humans for their brilliant insights.
+Further out, over the next 7 to 15 years, the field of math will transition to something more like the field 
+of "history" (which is more about scholarly work and interpretation).  Being a hot-shot researcher who can 
+come up with deep theories and deep proofs worthy of Annals will no longer have much value, as machines will 
+be able to write thousands and thousands of Annals-worthy proofs every day, and even generate new objects to 
+study, well-chosen definitions, etc.  Most major research prizes like the Fields Medal and the Cole Prize 
+will probably be disbanded, since it won't be possible to tell whether a human or machine did the critical 
+work; and these prizes are currently about awarding humans for their brilliant insights.
 
-It will still be necessary to have humans in the loop to guide these machine creations, and to read and understand them.  Thus, having people who are good scholars will have value to society.  That is what mathematicians will turn into, gradually, over the next 7 to 15 years, as I suggested.
+It will still be necessary to have humans in the loop to guide these machine creations, and to read and 
+understand them.  Thus, having people who are good scholars will have value to society.  That is what 
+mathematicians will turn into, gradually, over the next 7 to 15 years, as I suggested.
 
 
 Best wishes,
 
 Ernie</pre>
+
+I described in an email to some colleagues recently what my reasoning at this time (4 years ago!) was.  
+Here is what I said:
+
+<pre>
+I sort of imagined autoformalization (e.g. doing it for Fermat's Last Theorem, as we just saw) would come 
+from a different path than Szegedy proposed, however.  I imagined it would proceed like this:  model-makers 
+would create larger and larger models, and find a way to extend the context window length far beyond the 
+limits that existed at the time and get around the "quadratic attention bottleneck" that I knew about then.  
+And then I also thought they would train models to do better and better at in-context learning.  Once it got 
+good enough, they could feed the model a carefully-prepared long prompt spanning thousands of pages, basically 
+teaching a model all the tricks for how to do research math and to program in Lean.  This ultra-long prompt 
+would include not just "facts", but also experiments and examples of how to solve various problems, as well 
+as showing when some particular method failed (so, positive and negative examples, both). In addition, the 
+model could acquire even *more* skills by running many experiments *itself*, all within that ultra-long 
+context window (millions of tokens long).  In very short order it would get to the point where you could feed 
+it Fermat's Last Theorem, and it would go away and write up a perfect auto-formalized version and then verify 
+in Lean or some other proof-verification language / system.
+
+And, by the way, when models leverage prior context, they don't just have access to the *words* in that 
+context, but the whole KV-cache of forward-pass inferences leading to predictions for next tokens.  It's like 
+not only having access to the text, but also all the "feels" and "experiences" you have as you read it.
+</pre>
           
           </p></div>
         </article>
