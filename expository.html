@@ -1,52 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Expository notes by Ernie Croot on the convolution method, Padé approximation, Stepanov’s method, Meinardus’s result, and the Thue–Siegel theorem.">
+<title>Expository Notes | Ernie Croot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--ink:#182b3b;--muted:#566571;--line:#e2e7e9;--accent:#a14c2e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:'Roboto',Arial,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}a:hover{color:var(--accent)}a:focus-visible{outline:3px solid var(--accent);outline-offset:5px;border-radius:2px}.skip-link{position:absolute;top:-80px;left:20px;padding:10px 16px;background:#fff;z-index:10}.skip-link:focus{top:12px}
+.wrap{width:min(1060px,calc(100% - 80px));margin-inline:auto}.masthead{min-height:100px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}.wordmark{font-size:16px;font-weight:700;letter-spacing:-.02em;text-decoration:none}.masthead nav{display:flex;flex-wrap:wrap;gap:28px;font-size:14px}.masthead nav a{text-decoration:none}
+.hero{display:grid;grid-template-columns:1fr 250px;align-items:center;gap:70px;padding:68px 0 72px}.eyebrow{margin:0 0 18px;color:var(--accent);font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}h1{margin:0 0 18px;font-size:clamp(46px,6vw,72px);font-weight:500;line-height:1.06;letter-spacing:-.055em}.affiliation{margin:0;color:var(--muted);font-size:20px;line-height:1.65}.hero-contact{display:inline-block;margin-top:28px;font-size:15px}.portrait{display:block;width:250px;height:auto;border-radius:4px}
+.content{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:80px;padding:0 0 70px}h2{margin:0;font-size:21px;font-weight:500;line-height:1.4;letter-spacing:-.025em}.section-heading{padding-bottom:19px;border-bottom:1px solid var(--ink)}.resources{list-style:none;padding:0;margin:0}.resources li{border-bottom:1px solid var(--line)}.resource{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding:19px 0;text-decoration:none}.resource-title{font-size:17px;font-weight:500}.resource-note{display:block;margin-top:4px;color:var(--muted);font-size:14px;font-weight:400;line-height:1.55}.arrow{color:var(--accent);font-size:20px;line-height:1;transition:transform .15s ease}.resource:hover .arrow{transform:translateX(4px)}.resource:hover .resource-title{text-decoration:underline;text-underline-offset:.22em}
+.contact address{margin-top:23px;font-style:normal;color:var(--muted);font-size:15px;line-height:1.9}.contact address strong{color:var(--ink);font-weight:500}.contact-email{display:inline-block;margin-top:18px;font-size:15px;overflow-wrap:anywhere}.conference{margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}.conference h3{margin:0 0 8px;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}.conference a{font-size:15px;line-height:1.65}footer{padding:26px 0 36px;border-top:1px solid var(--line)}footer p{max-width:790px;margin:0;color:var(--muted);font-size:12px;line-height:1.8}
+@media(max-width:760px){.wrap{width:calc(100% - 40px)}.masthead{min-height:82px}.masthead nav{gap:18px;font-size:13px}.hero{gap:30px;grid-template-columns:1fr 170px;padding:48px 0}.portrait{width:170px}.affiliation{font-size:17px}.content{grid-template-columns:1fr;gap:42px;padding-bottom:46px}}
+@media(max-width:480px){.masthead{align-items:flex-start;flex-direction:column;justify-content:center;gap:8px;padding-block:18px}.hero{grid-template-columns:1fr;gap:30px;padding:38px 0 42px}.portrait{width:140px}.eyebrow{font-size:11px}h1{font-size:49px}.hero-contact{margin-top:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.arrow{transition:none}}
 
-<HTML>
-<BODY bgcolor="BLUE" link="CYAN">
-<center> <H1> Expository Notes </H1> </center>
-<H2> Disclaimer:  Many of these notes were hurridly written for my students,
-to give them a very rough idea of how certain theorems are proved.  Thus, some
-of the writeups may have minor errors.
-<br><br>
-<UL>
-<LI> <A HREF="roth.pdf"> <H2> Roth's Theorem on 3-term Arithmetic Progressions
-</H2> </A> (course notes from Math 8813 I taught Spring 2004)
-<LI> <A HREF="convolution.pdf"> <H2> The Convolution Method of Evaluating
-Sums of Multiplicative Functions </H2> </A> (course notes)
-<LI> <A HREF="balog2.pdf"> <H2> The Balog-Szemeredi Theorem </H2> 
-</A> (course notes)  I thank Seva Lev for making some edits to this
-note.  Seva himself has a writeup of Gowers's proof of the 
-Balog-Szemeredi theorem, and his website can be found
-<A HREF="http://math2.haifa.ac.il/~seva"> here </A>.
-<LI> <A HREF="regularity.pdf"> <H2> The Szemeredi Regularity Lemma </H2>
-(course notes) </A>
-<LI> <A HREF="bayesian_filtering.pdf"> <H2> Introductory Notes on 
-Bayesian Spam Filtering </H2> (course notes) </A>
-<LI> <A HREF="recurrence_notes2.pdf"> <H2> Introductory Notes on 
-Linear Recurrence Sequences </H2> (course notes) </A>
-<LI> <A HREF="riemann_notes.pdf"> <H2> Introductory Notes on 
-the Functional Equation of the Riemann Zeta Function </A> </H2> (course notes
--- a lot of material taken from Davenport and Montgomery's 
-Multiplicative Number Theory). </A> 
-<LI> <A HREF="transcend.pdf"> <H2> Notes on Pade Approximations and
-the Transcendence of Pi. </H2> </A>
-<LI> <A HREF="szemeredi.pdf"> <H2> Szemeredi's Proof for Three-Term
-Progressions, at a Glance. </H2> </A>
-<LI> <A HREF="stepanov4.pdf"> <H2> Stepanov's Proof for Weil Estimates
-(elliptic curve case) </H2> </A>
-<LI> <A HREF="meinardus.pdf"> <H2> Meinardus's ``inverse mellin transform''
-approach to the asymptotic formula for p(n) = number of partitions of
-n </H2> </A>
-<LI> <A HREF="thue_siegel_extracted.pdf"> <H2> An Intuitive Proof Outline of the 
-Thue-Siegel Theorem (revised 2026) </H2></A>
-<LI> <A HREF="bogolyubov-roth2.pdf"> <H2> Note on proving Roth's Theorem using
-Bogolyubov's method (with O. Sisask)</H2> </A> (Basically, this can be 
-thought of a re-casting of a similar theorem due to Szemeredi into the 
-language of `convoultions' and `Bogolyubov's lemma'.)
-<LI> <A HREF="hotspot_journal.pdf"> <H2> Note on an elementary proof of
-David Bailey's ``Hotspot Theorem'' </H2> </A>
-<LI> <A HREF="triangle_deletion.pdf"> <H2> Note on the Triangle Deletion
-(sometimes called Triange Removal) Lemma </H2> </A>
-<LI> <A HREF="littlewood_offord.pdf"> <H2> The basic Fourier proof of 
-Littlewood-Offord </H2> </A>
-</UL>
-</BODY>
-</HTML>
+.page-intro{max-width:800px;padding:68px 0 42px}
+.page-intro h1{font-size:clamp(42px,6vw,64px)}
+.intro-note{max-width:700px;margin:24px 0 0;color:var(--muted);font-size:16px;line-height:1.8}
+.notes{max-width:800px;padding-bottom:70px}
+.notes .resource{padding:25px 0;gap:28px}
+.notes .resource-title{font-size:19px;line-height:1.5}
+.notes .arrow{flex-shrink:0}
+@media(max-width:760px){.page-intro{padding:48px 0 32px}.notes{padding-bottom:46px}}
+@media(max-width:480px){.page-intro{padding:38px 0 28px}.notes .resource-title{font-size:17px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="masthead">
+<a class="wordmark" href="index.html" aria-label="Ernie Croot, home">Ernie Croot</a>
+<nav aria-label="Main navigation"><a href="index.html">Home</a></nav>
+</header>
+<main id="main">
+<div class="page-intro">
+<p class="eyebrow">Georgia Institute of Technology</p>
+<h1>Expository notes</h1>
+<p class="intro-note">Many of these notes were written quickly for my students to give a rough idea of how certain theorems are proved. Some writeups may contain minor errors.</p>
+</div>
+<section class="notes" aria-labelledby="notes-heading">
+<h2 class="section-heading" id="notes-heading">Selected notes</h2>
+<ul class="resources">
+<li><a class="resource" href="convolution.pdf"><span class="resource-title">The Convolution Method of Evaluating Sums of Multiplicative Functions<span class="resource-note">Course notes · PDF</span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="resource" href="transcend.pdf"><span class="resource-title">Padé Approximations and the Transcendence of Pi<span class="resource-note">PDF</span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="resource" href="stepanov4.pdf"><span class="resource-title">Stepanov’s Proof for Weil Estimates<span class="resource-note">Elliptic curve case · PDF</span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="resource" href="meinardus.pdf"><span class="resource-title">Meinardus’s Result on the Partition Function<span class="resource-note">The inverse Mellin transform approach to the asymptotic formula for p(n), the number of partitions of n · PDF</span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+<li><a class="resource" href="siegel.pdf"><span class="resource-title">An Intuitive Proof Outline of the Thue–Siegel Theorem<span class="resource-note">PDF</span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+</ul>
+</section>
+</main>
+<footer><p>Ernie Croot · School of Mathematics · Georgia Institute of Technology</p></footer>
+</div>
+</body>
+</html>
