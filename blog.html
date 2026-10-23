@@ -106,7 +106,7 @@
             </pre>
 
 I recently described in an email to some colleagues recently what my reasoning at this time (4 years ago!) was.  
-Here is what I said:
+Here is what I said related to "autoformalization", a component of overall process:
 
 <pre>
   I sort of imagined autoformalization (e.g. doing it for Fermat's Last Theorem, as we just saw) would come 
@@ -127,6 +127,16 @@ Here is what I said:
   context, but the whole KV-cache of forward-pass inferences leading to predictions for next tokens.  It's like 
   not only having access to the text, but also all the "feels" and "experiences" you have as you read it.
 </pre>
+That may or may not actually be how it turned out, but at least I had some kind of mechanism in mind how we go 
+from being good at basic arithmetic to being good at proving theorems.
+
+At the time (4 years ago), I saw a lot of skepticism on the internet about "oh, models just memorize and
+regurgitate", "they just interpolate", "they're just a simple finite state machine, like in basic linear algebra",
+and "it's just matrix multiplication, how smart could it be?"  None of this impressed me.  I knew models were at
+least <i>capable</i> of running arbitrary programs, at least if you encode them in the right way in the context
+window, and if the window is large enough to contain the execution traces (the memory stored in LLMs is in the 
+context window; they don't have permanent hidden state memory); all that "interpolation" business seemed not to 
+take algorithms and dynamic processes seriously; and then 
           
           </p></div>
         </article>
