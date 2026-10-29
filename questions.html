@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Some research questions by Ernie Croot.">
+<title>Some Research Questions | Ernie Croot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--ink:#182b3b;--muted:#566571;--line:#e2e7e9;--accent:#a14c2e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:'Roboto',Arial,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}a:hover{color:var(--accent)}a:focus-visible{outline:3px solid var(--accent);outline-offset:5px;border-radius:2px}.skip-link{position:absolute;top:-80px;left:20px;padding:10px 16px;background:#fff;z-index:10}.skip-link:focus{top:12px}
+.wrap{width:min(1060px,calc(100% - 80px));margin-inline:auto}.masthead{min-height:100px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}.wordmark{font-size:16px;font-weight:700;letter-spacing:-.02em;text-decoration:none}.masthead nav{display:flex;flex-wrap:wrap;gap:28px;font-size:14px}.masthead nav a{text-decoration:none}
+
+
+h1{margin:0;font-size:clamp(42px,6vw,64px);font-weight:500;line-height:1.1;letter-spacing:-.055em}
+.page-intro{padding:68px 0 38px}
+.eyebrow{margin:0 0 18px;color:var(--accent);font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
+.statement{max-width:760px;padding:30px 0 70px;border-top:1px solid var(--ink);font-size:17px;line-height:1.9;overflow-wrap:break-word}
+.statement p{margin:0 0 24px}
+.statement p:last-child{margin-bottom:0}
+footer{padding:26px 0 36px;border-top:1px solid var(--line)}
+footer p{margin:0;color:var(--muted);font-size:12px;line-height:1.8}
+@media(max-width:760px){.wrap{width:calc(100% - 40px)}.masthead{min-height:82px}.page-intro{padding:48px 0 30px}.statement{padding-bottom:46px}}
+@media(max-width:480px){.page-intro{padding:38px 0 28px}.eyebrow{font-size:11px}.statement{font-size:16px;line-height:1.85}}
+
+.questions{margin:32px 0;padding-left:28px}
+.questions li{padding:26px 0 28px 12px;border-top:1px solid var(--line)}
+.questions li::marker{color:var(--accent);font-weight:500}
+.questions p{margin:0}
+sup,sub{font-size:.75em;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}sub{bottom:-.2em}
+.closing-note{color:var(--muted);font-size:15px}
+@media(max-width:480px){.questions{padding-left:23px}.questions li{padding-left:6px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="masthead">
+    <a class="wordmark" href="index.html" aria-label="Ernie Croot, home">Ernie Croot</a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a></nav>
+  </header>
+  <main id="main">
+    <div class="page-intro">
+      <p class="eyebrow">Georgia Institute of Technology</p>
+      <h1 id="questions-title">Some Research Questions</h1>
+    </div>
+    <article class="statement" aria-labelledby="questions-title">
+      <p>I have decided to create some questions that are a lot harder than usual, now that AI is able to do things like prove the Riemann zeta function has no zeros s with Re(s) &gt; 7/8. I decided to choose some questions that are open-ended, &quot;meta&quot;, and likely won&#x27;t all be solved so quickly. I will add to the list as I think of interesting ones.</p>
+      <ol class="questions">
+        <li><p>Now that we know that a very strong form of the Erdos-Turan conjecture is true, and perhaps soon we will even have strong bounds for polynomial progressions, perhaps it is a good idea to ask about more general types of sequences along these lines. People are trying this; for example, they are proving results about Piatetski-Shapiro sequences, like for example arithmetic progressions x, x + [y<sup>c</sup>], 2[y<sup>c</sup>], ..., x + k [y<sup>c</sup>]. But let us try to be even more ambitious than that, and I will make it kind of an inverse question. First, observe that one way to think about an arithmetic progression x, x+d, x+2d, ..., x+kd, is that it&#x27;s saying that you have a very compressed representation -- just two numbers x and d -- that determines k+1 different numbers in your set. Furthermore, you do not need many arithmetic operations to compute all those k+1 numbers. My question is: which functions f that take as input two numbers -- call them x and d -- and then output k integers (x<sub>1</sub>, ..., x<sub>k</sub>) using at most (k+1)<sup>A</sup> arithmetic operations (which could include addition, multiplication, division, rounding, and maybe modular arithmetic), for some A &gt; 0, have the property that for every positive upper density subset S of the positive integers, there exist integers x and d such that if you plug them into f, the resulting sequence (x<sub>1</sub>, ..., x<sub>k</sub>) is contained in S x S x S x ... x S?</p></li>
+        <li><p>The kinds of set sizes for maximal sets S in [N] without certain patterns (3APs, solutions to x+y=z, square differences), are either of the form cN (e.g. in the case of maximal sets S without solutios to x+y=z), or quasipolynomial / Behrend-like (i.e. of the shape N exp(-(log N)<sup>c</sup>) ), or N<sup>c</sup>. Are there natural problems with forbidden patterns where the extremal sets S have size, say, N / log N or other such intermediate function?</p></li>
+        <li><p>An interesting phenomenon is the fact that greedy algorithms often lead to constructions that underperfom more &quot;global methods&quot;, with Sidon sets being a prime example: if you greedily construct a Sidon set by picking the next available positive integer while preserving the Sidon property, you get a set Sidon set in [N] of size only about N<sup>1/3</sup>; but we know that the largest Sidon set in [N] has size about sqrt(N). However, you <em>can</em> create a large Sidon set greedily using prime numbers, since primes can be constructed greedily (if you have chosen the first k primes, pick the next integer not divisible by any of them, and then that with be the next prime in the sequence). The construction of your Sidon set involves simply computing [M log(p)] for each prime p your greedily choose, for some choice of M. Are there other types of greedy algorithms like this for constructing Sidon sets or even other kinds of sets -- such as sets without three-term progressions -- that appear in discrete analaysis?</p></li>
+      </ol>
+      <p class="closing-note">Check back later, as I will add more problems...</p>
+    </article>
+  </main>
+  <footer><p>Ernie Croot · School of Mathematics · Georgia Institute of Technology</p></footer>
+</div>
+</body>
+</html>
